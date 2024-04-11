@@ -8,9 +8,9 @@ const CardPreview = () => {
   return (
     <div className="card-preview">
       {/* Optional chaining to safely access properties */}
-      <div className="card-number">{cardDetails.number || 'XXXX XXXX XXXX XXXX'}</div>
-      <div className="card-holder">{cardDetails.holder || 'Cardholder Name'}</div>
-      <div className="card-expiry">{cardDetails.expiry || 'MM/YY'}</div>
+      <div className="card-number">{cardDetails.number}</div>
+      <div className="card-holder">{cardDetails.holder}</div>
+      <div className="card-expiry">{cardDetails.expiry}</div>
       {/* Add any other details you want to preview */}
     </div>
   );
