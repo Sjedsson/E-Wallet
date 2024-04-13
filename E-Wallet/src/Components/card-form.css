@@ -10,7 +10,7 @@ body, html {
   border-radius: 10px;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.08);
   width: 450px;
-  height: 250px; /* Reduced height */
+  height: 250px;
   margin: 20px auto;
   position: relative;
   padding: 20px;
@@ -31,12 +31,12 @@ body, html {
 }
 
 .card-preview .card-number {
-  font-size: 1.5em;
-  letter-spacing: 2px;
+  font-size: 1.5em; 
+  letter-spacing: 2px; 
   white-space: nowrap;
   color: #000000;
   position: absolute;
-  top: 55%;
+  top: 55%; 
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -50,17 +50,32 @@ body, html {
   justify-content: space-between;
 }
 
+
+.card-preview .card-holder-section,
+.card-preview .card-expiry-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-preview .card-info-label {
+  font-size: 0.7em;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+
 .card-preview .card-holder,
 .card-preview .card-expiry {
   font-size: 1em;
   color: #000000;
 }
 
+
 .card-preview.color-bitcoin-inc .card-holder,
 .card-preview.color-bitcoin-inc .card-expiry,
 .card-preview.color-bitcoin-inc .card-info-label {
   color: #000000;
 }
+
 
 .card-form-container {
   width: 90%;
@@ -78,9 +93,8 @@ body, html {
   width: 100%;
   padding: 20px;
   border: 1px solid #CCC;
-  border-radius: 5px;
+  border-radius: 5px; 
   box-sizing: border-box;
-  margin-bottom: 10px; /* Add margin-bottom for gap between inputs */
 }
 
 .card-form-container button {
@@ -106,62 +120,64 @@ body, html {
 .card-form-container input[name="expiry"],
 .card-form-container input[name="cvv"] {
   width: 100%;
-}
+  }
 
-.card-form-container select[name="vendor"] {
-  width: 100%;
-}
-
-.card-preview.color-block-chain-inc {
+  .card-form-container select[name="vendor"] {
+    width: 100%;
+  }
+  
+ 
+  .card-preview.color-bitcoin-inc {
+    background-color: #FFAE34;
+  }
+  
+  .card-preview.color-block-chain-inc {
   background-color: #8B58F9;
-}
-
-.card-preview.color-bitcoin-inc {
-  background-color: #FFAE34;
-}
-
-.card-preview.color-evil-corp {
+  }
+  
+  .card-preview.color-evil-corp {
   background-color: #F33355;
-}
-
-.card-preview.color-ninja-bank {
+  }
+  
+  .card-preview.color-ninja-bank {
   background-color: #222222;
-}
-
-.card-preview.color-block-chain-inc .card-holder,
-.card-preview.color-block-chain-inc .card-expiry,
-.card-preview.color-block-chain-inc .card-info-label,
-.card-preview.color-block-chain-inc .card-number,
-.card-preview.color-evil-corp .card-holder,
-.card-preview.color-evil-corp .card-expiry,
-.card-preview.color-evil-corp .card-info-label,
-.card-preview.color-evil-corp .card-number,
-.card-preview.color-ninja-bank .card-holder,
-.card-preview.color-ninja-bank .card-expiry,
-.card-preview.color-ninja-bank .card-info-label,
-.card-preview.color-ninja-bank .card-number {
-  color: #ffffff;
-  font-family: 'PT Mono', monospace;
-}
-
-.home-link {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-top: 3rem;
-}
-
-@media (max-width: 768px) {
-  .card-preview {
-    max-width: 85%;
-    height: 25vh;
   }
-
+  
+  .card-preview.color-block-chain-inc .card-holder,
+  .card-preview.color-block-chain-inc .card-expiry,
+  .card-preview.color-block-chain-inc .card-info-label,
+  .card-preview.color-block-chain-inc .card-number,
+  .card-preview.color-evil-corp .card-holder,
+  .card-preview.color-evil-corp .card-expiry,
+  .card-preview.color-evil-corp .card-info-label,
+  .card-preview.color-evil-corp .card-number,
+  .card-preview.color-ninja-bank .card-holder,
+  .card-preview.color-ninja-bank .card-expiry,
+  .card-preview.color-ninja-bank .card-info-label,
+  .card-preview.color-ninja-bank .card-number {
+    color: #ffffff;
+    font-family: 'PT Mono', monospace;
+  }
+  
   .home-link {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
+    margin-top: 3rem;
   }
 
-  .card-form-container {
-    width: 95%;
+  @media (max-width: 768px) {
+    .card-preview {
+      max-width: 85%;
+      height: 25vh;
+    }
+  
+    .home-link {
+      font-size: 2rem;
+      text-align: center;
+    }
+  
+    .card-form-container {
+      width: 95%;
+
+    }
   }
-}
