@@ -5,6 +5,8 @@ import EvilIcon from '../assets/vendor-evil.svg';
 import NinjaIcon from '../assets/vendor-ninja.svg';
 import ChipDark from '../assets/chip-dark.svg';
 import ChipLight from '../assets/chip-light.svg';
+import './card-form.css';
+
 
 const CardPreview = ({ cardDetails }) => {
   // Function to get the corresponding SVG based on the vendor
@@ -38,17 +40,16 @@ const CardPreview = ({ cardDetails }) => {
   };
 
   return (
-    <div className="card-preview">
-      <div className="card">
-        {cardDetails.vendor && <img src={getVendorIcon(cardDetails.vendor)} alt="Vendor Icon" />}
-        {cardDetails.vendor && <img src={getVendorChip(cardDetails.vendor)} alt="Vendor Chip" />}
-        <div className="card-body">
-          <div className="card-number">{cardDetails.number || 'XXXX XXXX XXXX XXXX'}</div>
-          <div className="card-holder">{cardDetails.holder || 'CARDHOLDER NAME'}</div>
-          <div className="card-expiry">{cardDetails.expiry || 'MM/YY'}</div>
-        </div>
-      </div>
+<div className="card-preview">
+    {cardDetails.vendor && <img src={getVendorIcon(cardDetails.vendor)} className="card-vendor-icon" alt="Vendor Icon" />}
+    {cardDetails.vendor && <img src={getVendorChip(cardDetails.vendor)} className="card-chip" alt="Vendor Chip" />}
+    <div className="card-number">{cardDetails.number || 'XXXX XXXX XXXX XXXX'}</div>
+    <div className="card-holder-expiry">
+      <div className="card-holder">{cardDetails.holder || 'CARDHOLDER NAME'}</div>
+      <div className="card-expiry">{cardDetails.expiry || 'MM/YY'}</div>
     </div>
+</div>
+
   );
 };
 

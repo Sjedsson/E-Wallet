@@ -8,35 +8,66 @@ body, html {
 
 /* Card Preview Styles */
 .card-preview {
-  background-color: #FFFFFF;
+  background-color: #454545; /* Dark grey card color */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 350px; /* Card width */
+  height: 200px; /* Card height */
   margin: 20px auto;
-  width: 80%; /* Adjust width as needed */
-  max-width: 450px; /* Maximum width */
-  height: 200px; /* Adjust height as needed */
-  display: grid;
-  grid-template-columns: 1fr; /* Single column */
-  grid-template-rows: auto; /* Auto rows */
-  justify-items: center; /* Center content */
-  align-items: center; /* Center content */
+  position: relative; /* Allows for absolute positioning inside */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Text within Card Preview */
-.card-preview .card-number,
+/* Positioning the chip to the top left */
+.card-preview .card-chip {
+  position: absolute;
+  top: 20px; /* Distance from the top of the card */
+  left: 20px; /* Distance from the left side of the card */
+  width: 40px; /* Size of your chip image */
+}
+
+/* Positioning the icon to the top right */
+.card-preview .card-vendor-icon {
+  position: absolute;
+  top: 20px; /* Distance from the top of the card */
+  right: 20px; /* Distance from the right side of the card */
+  width: 40px; /* Size of your vendor icon */
+}
+
+/* Styling the card number, holder, and expiry */
+.card-preview .card-number {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center horizontally */
+  font-size: 1.2em; /* Font size */
+  letter-spacing: 2px; /* Spacing between characters */
+  color: #FFF; /* Font color */
+}
+
+.card-preview .card-holder-expiry {
+  position: absolute;
+  bottom: 20px; /* Distance from the bottom edge */
+  left: 20px; /* Align with the chip image */
+  right: 20px; /* Align with the vendor icon */
+  display: flex;
+  justify-content: space-between; /* Space between holder and expiry */
+}
+
 .card-preview .card-holder,
 .card-preview .card-expiry {
-  font-size: 1.2em;
-  margin: 5px 0;
-  width: 90%; /* Set width to match card preview */
+  font-size: 1em; /* Font size */
+  color: #FFF; /* Font color */
 }
 
 /* Form Styles */
 .card-form-container {
   width: 90%; /* Adjust width as needed */
   max-width: 500px; /* Maximum width */
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 .card-form-container form {
@@ -46,19 +77,18 @@ body, html {
 
 .card-form-container input,
 .card-form-container select {
-  width: 100%; /* Take full width */
+  width: 100%; /* Full width */
   padding: 20px;
-  border: 1px solid #CCC;
-  border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding and border are included in the width */
-  
+  border: 1px solid #CCC; /* Border color */
+  border-radius: 5px; /* Border radius */
+  box-sizing: border-box; /* Include padding and border in the width */
 }
 
 .card-form-container button {
-  background-color: #000000;
-  color: white;
+  background-color: #000000; /* Button color */
+  color: white; /* Text color */
   border: none;
-  border-radius: 5px;
+  border-radius: 5px; /* Border radius */
   padding: 25px;
   cursor: pointer;
   width: 100%; /* Full width */
@@ -68,7 +98,6 @@ body, html {
   background-color: #333333; /* Darken the button on hover */
 }
 
-/* Form Styles */
 .card-form-container .input-pair {
   display: grid;
   gap: 10px; /* Spacing between elements */
@@ -77,9 +106,9 @@ body, html {
 
 .card-form-container input[name="expiry"],
 .card-form-container input[name="cvv"] {
-  width: 100%; /* Take full width */
+  width: 100%; /* Full width */
 }
 
 .card-form-container select[name="vendor"] {
-  width: 100%; /* Take full width */
+  width: 100%; /* Full width */
 }
