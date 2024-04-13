@@ -8,17 +8,14 @@ body, html {
 
 /* Card Preview Styles */
 .card-preview {
-  background-color: #454545; /* Dark grey card color */
+  background-color: rgba(0, 0, 0, 0.08); /* Semi-transparent black for card color */
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 350px; /* Card width */
-  height: 200px; /* Card height */
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.08);
+  width: 450px; /* Increased card width */
+  height: 250px; /* Increased card height */
   margin: 20px auto;
   position: relative; /* Allows for absolute positioning inside */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 20px; /* Padding inside the card */
 }
 
 /* Positioning the chip to the top left */
@@ -26,7 +23,7 @@ body, html {
   position: absolute;
   top: 20px; /* Distance from the top of the card */
   left: 20px; /* Distance from the left side of the card */
-  width: 40px; /* Size of your chip image */
+  width: 40px; /* Adjust if needed */
 }
 
 /* Positioning the icon to the top right */
@@ -34,33 +31,59 @@ body, html {
   position: absolute;
   top: 20px; /* Distance from the top of the card */
   right: 20px; /* Distance from the right side of the card */
-  width: 40px; /* Size of your vendor icon */
+  width: 40px; /* Adjust if needed */
 }
 
-/* Styling the card number, holder, and expiry */
 .card-preview .card-number {
+  font-size: 1.5em; /* Adjust size as needed */
+  letter-spacing: 2px; /* Add spacing between characters */
+  white-space: nowrap; /* Prevent wrapping */
+  color: #000000; /* Font color */
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 55%; /* Adjusted vertical position, previously 20% */
   left: 50%;
-  transform: translate(-50%, -50%); /* Center horizontally */
-  font-size: 1.2em; /* Font size */
-  letter-spacing: 2px; /* Spacing between characters */
-  color: #FFF; /* Font color */
+  transform: translate(-50%, -50%); /* Centers the text horizontally and moves it up half its height */
 }
 
+
+/* Container for card holder and expiry */
 .card-preview .card-holder-expiry {
   position: absolute;
-  bottom: 20px; /* Distance from the bottom edge */
-  left: 20px; /* Align with the chip image */
-  right: 20px; /* Align with the vendor icon */
+  bottom: 30px; /* Adjusted for bottom position */
+  left: 20px; /* Left align */
+  width: calc(100% - 40px); /* Full width minus padding */
   display: flex;
   justify-content: space-between; /* Space between holder and expiry */
 }
 
+/* Individual sections for card holder and expiry */
+.card-preview .card-holder-section,
+.card-preview .card-expiry-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-preview .card-info-label {
+  font-size: 0.7em; /* Smaller font size for label text */
+  color: rgba(0, 0, 0, 0.8);
+  ; /* Font color */
+}
+
+/* Text for card holder name and expiry */
 .card-preview .card-holder,
 .card-preview .card-expiry {
   font-size: 1em; /* Font size */
-  color: #FFF; /* Font color */
+  color: #000000; /* Font color */
+}
+
+/* ... Rest of your CSS for the form ... */
+
+
+.card-preview .card-holder,
+.card-preview .card-expiry {
+  font-size: 1.2em; /* Font size */
+  color: rgba(0, 0, 0, 1);
+  ; /* Font color */
 }
 
 /* Form Styles */
@@ -111,4 +134,20 @@ body, html {
 
 .card-form-container select[name="vendor"] {
   width: 100%; /* Full width */
+}
+
+.card-preview.color-bitcoin-inc {
+  background-color: #FFAE34; /* Bitcoin orange */
+}
+
+.card-preview.color-block-chain-inc {
+  background-color: #8B58F9; /* Blockchain green */
+}
+
+.card-preview.color-evil-corp {
+  background-color: #F33355; /* Evil Corp red */
+}
+
+.card-preview.color-ninja-bank {
+  background-color: #222222; /* Ninja Bank dark */
 }
