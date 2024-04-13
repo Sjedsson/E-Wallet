@@ -3,7 +3,9 @@ import BitcoinIcon from '../assets/vendor-bitcoin.svg';
 import BlockchainIcon from '../assets/vendor-blockchain.svg';
 import EvilIcon from '../assets/vendor-evil.svg';
 import NinjaIcon from '../assets/vendor-ninja.svg';
-// ... Import other assets as needed
+import ChipDark from '../assets/chip-dark.svg';
+import ChipLight from '../assets/chip-light.svg';
+// Import other assets as needed
 
 const Card = ({ cardData }) => {
   // Function to get the corresponding SVG based on the vendor
@@ -22,9 +24,24 @@ const Card = ({ cardData }) => {
     }
   };
 
+  // Function to get the chip image based on the vendor
+  const getVendorChip = (vendor) => {
+    switch (vendor) {
+      case 'bitcoin-inc':
+        return ChipDark;
+      case 'blockchain-inc':
+      case 'evil-corp':
+      case 'ninja-bank':
+        return ChipLight;
+      default:
+        return null; // Return null if the vendor chip is not defined
+    }
+  };
+
   return (
     <div className="card">
-      {cardData.vendor && getVendorIcon(cardData.vendor)} {/* Conditionally render the vendor icon */}
+      {cardData.vendor && getVendorIcon(cardData.vendor)} {/* Render the vendor icon */}
+      {cardData.vendor && <img src={getVendorChip(cardData.vendor)} alt="Chip" />} {/* Render the vendor chip */}
       <div className="card-body">
         <div className="card-number">
           {cardData.number}
