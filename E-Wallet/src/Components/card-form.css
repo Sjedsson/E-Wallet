@@ -2,7 +2,7 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'PT Mono', monospace; /* Applying PT Mono font */
   background-color: #ECECEC; /* Light grey background */
 }
 
@@ -34,17 +34,17 @@ body, html {
   width: 40px; /* Adjust if needed */
 }
 
+/* Styling the card number */
 .card-preview .card-number {
   font-size: 1.5em; /* Adjust size as needed */
   letter-spacing: 2px; /* Add spacing between characters */
   white-space: nowrap; /* Prevent wrapping */
-  color: #000000; /* Font color */
+  color: #000000; /* Default font color */
   position: absolute;
   top: 55%; /* Adjusted vertical position, previously 20% */
   left: 50%;
   transform: translate(-50%, -50%); /* Centers the text horizontally and moves it up half its height */
 }
-
 
 /* Container for card holder and expiry */
 .card-preview .card-holder-expiry {
@@ -65,25 +65,21 @@ body, html {
 
 .card-preview .card-info-label {
   font-size: 0.7em; /* Smaller font size for label text */
-  color: rgba(0, 0, 0, 0.8);
-  ; /* Font color */
+  color: rgba(0, 0, 0, 0.8); /* Font color */
 }
 
 /* Text for card holder name and expiry */
 .card-preview .card-holder,
 .card-preview .card-expiry {
   font-size: 1em; /* Font size */
-  color: #000000; /* Font color */
+  color: #000000; /* Default font color */
 }
 
-/* ... Rest of your CSS for the form ... */
-
-
-.card-preview .card-holder,
-.card-preview .card-expiry {
-  font-size: 1.2em; /* Font size */
-  color: rgba(0, 0, 0, 1);
-  ; /* Font color */
+/* Apply white text color for vendors other than Bitcoin */
+.card-preview.color-bitcoin-inc .card-holder,
+.card-preview.color-bitcoin-inc .card-expiry,
+.card-preview.color-bitcoin-inc .card-info-label {
+  color: #000000; /* White font color */
 }
 
 /* Form Styles */
@@ -136,18 +132,36 @@ body, html {
   width: 100%; /* Full width */
 }
 
+/* Vendor-specific background colors */
 .card-preview.color-bitcoin-inc {
-  background-color: #FFAE34; /* Bitcoin orange */
+  background-color: #FFAE34; /*
+  Bitcoin orange */
 }
 
 .card-preview.color-block-chain-inc {
-  background-color: #8B58F9; /* Blockchain green */
+background-color: #8B58F9; /* Blockchain green */
 }
 
 .card-preview.color-evil-corp {
-  background-color: #F33355; /* Evil Corp red */
+background-color: #F33355; /* Evil Corp red */
 }
 
 .card-preview.color-ninja-bank {
-  background-color: #222222; /* Ninja Bank dark */
+background-color: #222222; /* Ninja Bank dark */
+}
+
+.card-preview.color-block-chain-inc .card-holder,
+.card-preview.color-block-chain-inc .card-expiry,
+.card-preview.color-block-chain-inc .card-info-label,
+.card-preview.color-block-chain-inc .card-number,
+.card-preview.color-evil-corp .card-holder,
+.card-preview.color-evil-corp .card-expiry,
+.card-preview.color-evil-corp .card-info-label,
+.card-preview.color-evil-corp .card-number,
+.card-preview.color-ninja-bank .card-holder,
+.card-preview.color-ninja-bank .card-expiry,
+.card-preview.color-ninja-bank .card-info-label,
+.card-preview.color-ninja-bank .card-number {
+  color: #ffffff;
+  font-family: 'PT Mono', monospace;
 }
