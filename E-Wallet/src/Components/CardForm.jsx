@@ -20,52 +20,59 @@ const CardForm = ({ cardDetails, setCardDetails }) => {
     e.preventDefault();
     dispatch(addCard(cardDetails)); // Dispatch the action to add the card
     navigate('/'); // Navigate to the home page after submission
-    // Optionally reset cardDetails if needed, or handle it in the global state
   };
 
   return (
     <div className="card-form-container">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="number"
-          placeholder="Card Number"
-          value={cardDetails.number}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="holder"
-          placeholder="Card Holder"
-          value={cardDetails.holder}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="expiry"
-          placeholder="Valid Thru"
-          value={cardDetails.expiry}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="cvv"
-          placeholder="CVV"
-          value={cardDetails.cvv}
-          onChange={handleChange}
-        />
-        <select
-          name="vendor"
-          value={cardDetails.vendor}
-          onChange={handleChange}
-          required
-        >
-          <option value="">Select vendor...</option>
-          <option value="bitcoin-inc">BITCOIN INC</option>
-          <option value="ninja-bank">NINJA BANK</option>
-          <option value="block-chain-inc">BLOCK CHAIN INC</option>
-          <option value="evil-corp">EVIL CORP</option>
-        </select>
+        <div className="input-full-width">
+          <input
+            type="text"
+            name="number"
+            placeholder="Card Number"
+            value={cardDetails.number}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-full-width">
+          <input
+            type="text"
+            name="holder"
+            placeholder="Card Holder"
+            value={cardDetails.holder}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-pair">
+          <input
+            type="text"
+            name="expiry"
+            placeholder="Valid Thru"
+            value={cardDetails.expiry}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="cvv"
+            placeholder="CVV"
+            value={cardDetails.cvv}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-full-width">
+          <select
+            name="vendor"
+            value={cardDetails.vendor}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select vendor...</option>
+            <option value="bitcoin-inc">BITCOIN INC</option>
+            <option value="ninja-bank">NINJA BANK</option>
+            <option value="block-chain-inc">BLOCK CHAIN INC</option>
+            <option value="evil-corp">EVIL CORP</option>
+          </select>
+        </div>
         <button type="submit">Add Card</button>
       </form>
     </div>
