@@ -2,152 +2,130 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'PT Mono', monospace; /* Applying PT Mono font */
-  background-color: #ECECEC; /* Light grey background */
+  font-family: 'PT Mono', monospace;
 }
 
-/* Card Preview Styles */
 .card-preview {
-  background-color: rgba(0, 0, 0, 0.08); /* Semi-transparent black for card color */
+  background-color: rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.08);
-  width: 450px; /* Increased card width */
-  height: 250px; /* Increased card height */
+  width: 450px;
+  height: 250px; /* Reduced height */
   margin: 20px auto;
-  position: relative; /* Allows for absolute positioning inside */
-  padding: 20px; /* Padding inside the card */
+  position: relative;
+  padding: 20px;
 }
 
-/* Positioning the chip to the top left */
 .card-preview .card-chip {
   position: absolute;
-  top: 20px; /* Distance from the top of the card */
-  left: 20px; /* Distance from the left side of the card */
-  width: 40px; /* Adjust if needed */
+  top: 20px;
+  left: 20px;
+  width: 40px;
 }
 
-/* Positioning the icon to the top right */
 .card-preview .card-vendor-icon {
   position: absolute;
-  top: 20px; /* Distance from the top of the card */
-  right: 20px; /* Distance from the right side of the card */
-  width: 40px; /* Adjust if needed */
+  top: 20px;
+  right: 20px;
+  width: 40px;
 }
 
-/* Styling the card number */
 .card-preview .card-number {
-  font-size: 1.5em; /* Adjust size as needed */
-  letter-spacing: 2px; /* Add spacing between characters */
-  white-space: nowrap; /* Prevent wrapping */
-  color: #000000; /* Default font color */
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  color: #000000;
   position: absolute;
-  top: 55%; /* Adjusted vertical position, previously 20% */
+  top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the text horizontally and moves it up half its height */
+  transform: translate(-50%, -50%);
 }
 
-/* Container for card holder and expiry */
 .card-preview .card-holder-expiry {
   position: absolute;
-  bottom: 30px; /* Adjusted for bottom position */
-  left: 20px; /* Left align */
-  width: calc(100% - 40px); /* Full width minus padding */
+  bottom: 30px;
+  left: 20px;
+  width: calc(100% - 40px);
   display: flex;
-  justify-content: space-between; /* Space between holder and expiry */
+  justify-content: space-between;
 }
 
-/* Individual sections for card holder and expiry */
-.card-preview .card-holder-section,
-.card-preview .card-expiry-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.card-preview .card-info-label {
-  font-size: 0.7em; /* Smaller font size for label text */
-  color: rgba(0, 0, 0, 0.8); /* Font color */
-}
-
-/* Text for card holder name and expiry */
 .card-preview .card-holder,
 .card-preview .card-expiry {
-  font-size: 1em; /* Font size */
-  color: #000000; /* Default font color */
+  font-size: 1em;
+  color: #000000;
 }
 
-/* Apply white text color for vendors other than Bitcoin */
 .card-preview.color-bitcoin-inc .card-holder,
 .card-preview.color-bitcoin-inc .card-expiry,
 .card-preview.color-bitcoin-inc .card-info-label {
-  color: #000000; /* White font color */
+  color: #000000;
 }
 
-/* Form Styles */
 .card-form-container {
-  width: 90%; /* Adjust width as needed */
-  max-width: 500px; /* Maximum width */
+  width: 90%;
+  max-width: 500px;
   margin: 20px auto;
 }
 
 .card-form-container form {
   display: grid;
-  gap: 10px; /* Spacing between elements */
+  gap: 10px;
 }
 
 .card-form-container input,
 .card-form-container select {
-  width: 100%; /* Full width */
+  width: 100%;
   padding: 20px;
-  border: 1px solid #CCC; /* Border color */
-  border-radius: 5px; /* Border radius */
-  box-sizing: border-box; /* Include padding and border in the width */
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px; /* Add margin-bottom for gap between inputs */
 }
 
 .card-form-container button {
-  background-color: #000000; /* Button color */
-  color: white; /* Text color */
+  background-color: #000000;
+  color: white;
   border: none;
-  border-radius: 5px; /* Border radius */
+  border-radius: 5px;
   padding: 25px;
   cursor: pointer;
-  width: 100%; /* Full width */
+  width: 100%;
 }
 
 .card-form-container button:hover {
-  background-color: #333333; /* Darken the button on hover */
+  background-color: #333333;
 }
 
 .card-form-container .input-pair {
   display: grid;
-  gap: 10px; /* Spacing between elements */
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .card-form-container input[name="expiry"],
 .card-form-container input[name="cvv"] {
-  width: 100%; /* Full width */
+  width: 100%;
 }
 
 .card-form-container select[name="vendor"] {
-  width: 100%; /* Full width */
-}
-
-/* Vendor-specific background colors */
-.card-preview.color-bitcoin-inc {
-  background-color: #FFAE34; /*
-  Bitcoin orange */
+  width: 100%;
 }
 
 .card-preview.color-block-chain-inc {
-background-color: #8B58F9; /* Blockchain green */
+  background-color: #8B58F9;
+}
+
+.card-preview.color-bitcoin-inc {
+  background-color: #FFAE34;
 }
 
 .card-preview.color-evil-corp {
-background-color: #F33355; /* Evil Corp red */
+  background-color: #F33355;
 }
 
 .card-preview.color-ninja-bank {
-background-color: #222222; /* Ninja Bank dark */
+  background-color: #222222;
 }
 
 .card-preview.color-block-chain-inc .card-holder,
@@ -164,4 +142,26 @@ background-color: #222222; /* Ninja Bank dark */
 .card-preview.color-ninja-bank .card-number {
   color: #ffffff;
   font-family: 'PT Mono', monospace;
+}
+
+.home-link {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .card-preview {
+    max-width: 85%;
+    height: 25vh;
+  }
+
+  .home-link {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card-form-container {
+    width: 95%;
+  }
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './card-form.css'
 
 const Top = () => {
   return (
     <header className="top-header">
-      <Link to="/" className="home-link">E-Wallet</Link>
+      <h1 className="home-link">ADD A NEW BANK CARD</h1>
     </header>
   );
 };
