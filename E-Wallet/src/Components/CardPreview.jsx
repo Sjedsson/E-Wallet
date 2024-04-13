@@ -1,17 +1,14 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-const CardPreview = () => {
-  // Using Redux to get the card details from the state
-  const cardDetails = useSelector((state) => state.card.currentCardDetails) || {};
-
+// Update the component to accept cardDetails as a prop
+const CardPreview = ({ cardDetails }) => {
   return (
     <div className="card-preview">
-      {/* Optional chaining to safely access properties */}
-      <div className="card-number">{cardDetails.number}</div>
-      <div className="card-holder">{cardDetails.holder}</div>
-      <div className="card-expiry">{cardDetails.expiry}</div>
-      {/* Add any other details you want to preview */}
+      {/* Use the cardDetails prop to display the information */}
+      <div className="card-number">{cardDetails.number || 'XXXX XXXX XXXX XXXX'}</div>
+      <div className="card-holder">{cardDetails.holder || 'CARDHOLDER NAME'}</div>
+      <div className="card-expiry">{cardDetails.expiry || 'MM/YY'}</div>
+      {/* You can add vendor-specific styling or icons here based on cardDetails.vendor */}
     </div>
   );
 };

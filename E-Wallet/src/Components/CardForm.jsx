@@ -1,23 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addCard } from '../Redux/CardSlice'; // Adjust the path as needed
-
-// Import your CSS file here
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { addCard } from '../Redux/CardSlice';
 import './card-form.css';
 
-const CardForm = () => {
+const CardForm = ({ cardDetails, setCardDetails }) => {
   const dispatch = useDispatch();
-  const [cardDetails, setCardDetails] = useState({
-    number: '',
-    holder: '',
-    expiry: '',
-    cvv: '',
-    vendor: '', // Added vendor to the card details state
-  });
+  const navigate = useNavigate(); // Create the navigate function for redirection
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setCardDetails(prevDetails => ({
+    setCardDetails((prevDetails) => ({
       ...prevDetails,
       [name]: value,
     }));
@@ -25,16 +18,9 @@ const CardForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Dispatch the addCard action with cardDetails as payload
-    dispatch(addCard(cardDetails));
-    // Reset the form fields after submitting
-    setCardDetails({
-      number: '',
-      holder: '',
-      expiry: '',
-      cvv: '',
-      vendor: '',
-    });
+    dispatch(addCard(cardDetails)); // Dispatch the action to add the card
+    navigate('/'); // Navigate to the home page after submission
+    // Optionally reset cardDetails if needed, or handle it in the global state
   };
 
   return (
@@ -80,7 +66,7 @@ const CardForm = () => {
           <option value="block-chain-inc">BLOCK CHAIN INC</option>
           <option value="evil-corp">EVIL CORP</option>
         </select>
-        <button type="submit">Save Card</button>
+        <button type="submit">Add Card</button>
       </form>
     </div>
   );
