@@ -1,28 +1,19 @@
 /* card-styles.css */
-
-.card-stack {
-    position: relative;
-    /* Ensure there's enough space for all cards */
-    min-height: 300px;
+.card {
+    /* Shared styles for all cards */
+    transition: transform 0.5s ease, z-index 0s linear 0.5s;
+    cursor: pointer;
   }
   
-  .card-wrapper {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.3s, z-index 0s; /* Transition for transform, immediate z-index change */
+  .card.active {
+    /* Styles for active card */
+    z-index: 10;
+    /* Add any additional styling for active card */
   }
   
-  /* Active card with a higher z-index */
-  .active {
-    z-index: 10; /* A high z-index to ensure visibility */
-    transform: translateY(0); /* Active card is not translated */
-  }
-  
-  /* Inactive cards with a lower z-index */
-  .card-wrapper:not(.active) {
+  .card:not(.active) {
+    /* Styles for inactive cards */
     z-index: 1;
-    transform: translateY(15%); /* Translate inactive cards to stack behind the active card */
-    opacity: 0.6; /* Make inactive cards slightly transparent, if desired */
+    /* Adjust visibility if needed */
   }
   
