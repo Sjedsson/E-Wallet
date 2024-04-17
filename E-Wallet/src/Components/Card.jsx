@@ -1,4 +1,3 @@
-// Card.jsx
 import React from 'react';
 import BitcoinIcon from '../assets/vendor-bitcoin.svg';
 import BlockchainIcon from '../assets/vendor-blockchain.svg';
@@ -8,11 +7,13 @@ import ChipDark from '../assets/chip-dark.svg';
 import ChipLight from '../assets/chip-light.svg';
 import './card-styles.css'; // Import styles
 
+// Helper function to get CSS class based on the vendor
 const getVendorClass = (vendor) => {
   return `card card-preview color-${vendor.replace(/\s+/g, '-').toLowerCase()}`;
 };
 
-const Card = ({ cardData, onClick, active }) => {
+const Card = ({ cardData, onClick, isActive }) => {
+  // Get the corresponding SVG based on the vendor
   const vendorIcon = (vendor) => {
     switch (vendor) {
       case 'bitcoin-inc':
@@ -24,19 +25,20 @@ const Card = ({ cardData, onClick, active }) => {
       case 'ninja-bank':
         return NinjaIcon;
       default:
-        return '';
+        return ''; // You can return a default icon path here if you have one
     }
   };
 
+  // Get the chip image based on the vendor
   const vendorChip = (vendor) => {
     return vendor === 'bitcoin-inc' ? ChipDark : ChipLight;
   };
 
-  // Add the 'active' class if the card is active
-  const cardClass = getVendorClass(cardData.vendor) + (active ? ' active' : '');
+  // Construct the card's CSS class based on the vendor and active state
+  const cardClass = `${getVendorClass(cardData.vendor)} ${isActive ? 'active' : ''}`;
 
   return (
-    <div className={cardClass} onClick={onClick}>
+    <div className={cardClass} onClick={() => onClick(cardData.id)}>
       <img className="card-chip" src={vendorChip(cardData.vendor)} alt="Chip" />
       <img className="card-vendor-icon" src={vendorIcon(cardData.vendor)} alt={`${cardData.vendor} Icon`} />
       <div className="card-number">
