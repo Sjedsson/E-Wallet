@@ -165,6 +165,43 @@ body, html {
     margin-top: 3rem;
   }
 
+  .add-card-link {
+    display: block; /* Makes it a block-level element */
+    width: 31.5%; /* Adjusts the width as per padding */
+    margin: 0 auto 30px; /* Centers the button and positions it 30px above the bottom */
+    padding: 20px; /* Adds some padding inside the button */
+    background-color: #fff; /* Sets the background color to white */
+    color: black; /* Sets the text color to black */
+    border: 2px solid #000; /* Adds a solid black border */
+    border-radius: 5px; /* Rounds the corners */
+    text-align: center; /* Centers the text inside the button */
+    font-size: 18px; /* Sets the font size */
+    text-decoration: none; /* Removes the underline from the text */
+    font-weight: bold; /* Makes the font bold */
+    cursor: pointer; /* Changes the cursor to signify it's clickable */
+    box-sizing: border-box; /* Ensures the padding doesn't affect the final width */
+  }
+  
+  /* Adjusting for when the button is at the bottom of the page or its container */
+  .container { /* Assuming the button is inside a container */
+    position: relative; /* Establishes a containing block for absolute positioning */
+    padding-bottom: 60px; /* Adds padding at the bottom for the button */
+  }
+  
+  /* Use this if you need the button to be absolutely positioned within a container */
+  .add-card-link {
+    position: absolute;
+    bottom: 10%; /* Positions the button 30px from the bottom of its relative container */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the button horizontally */
+  }
+  
+
+
+  .add-card-link:hover{
+  background-color: #f0f0f0; /* Light grey background on hover */
+}
+
   @media (max-width: 768px) {
     .card-preview {
       max-width: 85%;
