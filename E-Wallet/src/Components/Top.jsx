@@ -1,10 +1,12 @@
 import React from 'react';
 import './card-form.css'
 
-const Top = () => {
+
+const Top = ({ title }) => {
   return (
-    <header className="top-header">
-      <h1 className="home-link">ADD A NEW BANK CARD</h1>
+    <header>
+      <h1>{title}</h1>
+      {/* Other elements that are part of the top component */}
     </header>
   );
 };
