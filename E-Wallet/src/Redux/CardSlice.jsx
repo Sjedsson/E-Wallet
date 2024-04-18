@@ -5,7 +5,7 @@ export const cardSlice = createSlice({
   initialState: {
     cards: [],
     activeCardIndex: null,
-    isAddingNewCard: false,  // New state to track if adding a new card
+    isAddingNewCard: false,
   },
   reducers: {
     addCard: (state, action) => {
@@ -21,13 +21,17 @@ export const cardSlice = createSlice({
       const { index, updatedCardData } = action.payload;
       state.cards[index] = updatedCardData;
     },
-    setIsAddingNewCard: (state, action) => { // New reducer to handle the isAddingNewCard state
+    setIsAddingNewCard: (state, action) => {
       state.isAddingNewCard = action.payload;
+    },
+    // New reducer to handle updating the order of cards
+    updateCardOrder: (state, action) => {
+      state.cards = action.payload;
     },
   },
 });
 
-// Exporting the new action
-export const { addCard, removeCard, setActiveCard, updateCard, setIsAddingNewCard } = cardSlice.actions;
+// Exporting all actions, including the new updateCardOrder
+export const { addCard, removeCard, setActiveCard, updateCard, setIsAddingNewCard, updateCardOrder } = cardSlice.actions;
 
 export default cardSlice.reducer;

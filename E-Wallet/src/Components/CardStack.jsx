@@ -1,23 +1,36 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Card from './Card';
-import './card-styles.css'; // Import styles
+import { updateCardOrder } from '../Redux/CardSlice';
+import './card-styles.css';
 
-const CardStack = ({ cards }) => {
-  const [activeCardId, setActiveCardId] = useState(null); // State to track the active card ID
+const CardStack = () => {
+  const dispatch = useDispatch();
+  const cards = useSelector((state) => state.card.cards);
 
-  const handleCardClick = (cardId) => {
-    setActiveCardId(cardId); // Set the active card ID when a card is clicked
+  // Handler for clicking a card in the stack
+  const handleCardClick = (index) => {
+    // This logic assumes that the active card is always the first one in the array
+    const selectedCard = cards[index];
+    const updatedCards = [...cards];
+    updatedCards.splice(index, 1);
+    updatedCards.unshift(selectedCard);
+
+    dispatch(updateCardOrder(updatedCards)); // Dispatch the update order action
   };
 
   return (
     <div className="card-stack">
-      {cards.map((cardData) => (
-        <div className="card-wrapper" key={cardData.id}>
+      {cards.map((cardData, index) => (
+        <div
+          className={`card-wrapper ${index === 0 ? 'active' : 'inactive'}`}
+          key={cardData.id}
+          onClick={() => handleCardClick(index)}
+        >
           <Card
             cardData={cardData}
-            isActive={cardData.id === activeCardId} // Pass isActive prop based on active card ID
-            onClick={() => handleCardClick(cardData.id)} // Pass onClick handler to handle card click
+            // Passing down the index === 0 check as a prop to Card
+            isActive={index === 0}
           />
         </div>
       ))}
