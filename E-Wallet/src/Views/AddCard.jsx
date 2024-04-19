@@ -10,7 +10,7 @@ import '../Components/card-form.css';
 
 const AddCard = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
   const [cardDetails, setCardDetails] = useState({
     number: '',
     holder: '',
@@ -21,12 +21,12 @@ const AddCard = () => {
 
   const handleAddCard = (cardDetails) => {
     dispatch(addCard(cardDetails));
-    navigate('/'); // Redirect to Home page
+    navigate('/');
   };
 
   return (
     <div className="add-card">
-      <Top title="ADD A NEW BANK CARD" /> {/* Title is now set here */}
+      <Top title="ADD A NEW BANK CARD" />
       <CardPreview cardDetails={cardDetails} />
       <CardForm 
         cardDetails={cardDetails} 

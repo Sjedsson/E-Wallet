@@ -11,21 +11,89 @@
 
 
 .card-stack .card-wrapper:nth-child(n+2) {
-  z-index: 99; /* Next card will have a lower z-index */
-  top: 400px; /* Slightly offset from the top to show behind the active card */
+  z-index: 99;
+  top: 400px;
 }
 
 .card-stack .card-wrapper:nth-child(n+3) {
   z-index: 98;
-  top: 350px; /* Increase the offset for each subsequent card */
+  top: 350px;
 }
 
 .card-stack .card-wrapper:nth-child(n+4) {
   z-index: 100;
-  top: 450px; /* Increase the offset for each subsequent card */
+  top: 450px;
 }
 
 .card-stack .card-wrapper:nth-child(n+5) {
   z-index: 101;
-  top: 500px; /* Increase the offset for each subsequent card */
+  top: 500px;
+}
+
+
+.card-remove-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 45%;
+  padding: 5px 10px;
+  background-color: hsla(0, 100%, 54%, 0.997);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  opacity: 0.4;
+}
+
+.card-remove-btn:hover {
+  background-color: hsl(0, 82%, 32%);
+  transform: rotate(20deg);
+}
+
+.card-remove-btn i {
+  font-size: 1.2rem;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+.card-remove-btn:hover {
+  animation: shake 0.5s ease infinite;
+}
+
+@media (max-width: 768px) {
+  .card-wrapper {
+    width: 100%;
+    left: 0;
+    transform: none;
+    margin-top: -50px;
+  }
+
+
+  .add-card-link {
+    width: 94%;
+    margin: 0 auto 30px;
+    padding: 20px;
+    background-color: #fff;
+    color: black;
+    border: 2px solid #000;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    bottom: -3%;
+    left: 50%;
+    
+  }
+
 }

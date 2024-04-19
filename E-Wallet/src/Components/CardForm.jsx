@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import { addCard } from '../Redux/CardSlice';
 import './card-form.css';
 
 const CardForm = ({ cardDetails, setCardDetails }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Create the navigate function for redirection
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,8 +18,8 @@ const CardForm = ({ cardDetails, setCardDetails }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addCard(cardDetails)); // Dispatch the action to add the card
-    navigate('/'); // Navigate to the home page after submission
+    dispatch(addCard(cardDetails));
+    navigate('/');
   };
 
   return (

@@ -8,7 +8,6 @@ import ChipLight from '../assets/chip-light.svg';
 import './card-form.css';
 
 const CardPreview = ({ cardDetails }) => {
-  // Function to get the corresponding SVG based on the vendor
   const getVendorIcon = (vendor) => {
     switch (vendor) {
       case 'bitcoin-inc':
@@ -20,11 +19,10 @@ const CardPreview = ({ cardDetails }) => {
       case 'ninja-bank':
         return NinjaIcon;
       default:
-        return null; // Return null or a default icon if the vendor doesn't match
+        return null;
     }
   };
 
-  // Function to get the corresponding chip based on the vendor
   const getVendorChip = (vendor) => {
     switch (vendor) {
       case 'bitcoin-inc':
@@ -34,17 +32,15 @@ const CardPreview = ({ cardDetails }) => {
       case 'ninja-bank':
         return ChipLight;
       default:
-        return null; // Return null or a default chip if the vendor doesn't match
+        return null;
     }
   };
 
-  // Function to determine card color based on the vendor
   const getCardColorClass = (vendor) => {
     if (!vendor) return '';
     return `color-${vendor}`;
   };
 
-  // Use the getVendorIcon and getVendorChip functions to set the src for images
   const chipImageSrc = getVendorChip(cardDetails.vendor);
   const vendorIconSrc = getVendorIcon(cardDetails.vendor);
   const cardColorClass = getCardColorClass(cardDetails.vendor);

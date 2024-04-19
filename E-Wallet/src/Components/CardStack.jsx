@@ -8,14 +8,15 @@ const CardStack = () => {
   const dispatch = useDispatch();
   const cards = useSelector((state) => state.card.cards);
 
-  // Handler for clicking a card in the stack
   const handleCardClick = (index) => {
-    const selectedCard = cards[index];
-    const updatedCards = [...cards];
-    updatedCards.splice(index, 1);
-    updatedCards.unshift(selectedCard);
+    if (index !== 0) { 
+      const selectedCard = cards[index];
+      const updatedCards = [...cards];
+      updatedCards.splice(index, 1); 
+      updatedCards.unshift(selectedCard); 
 
-    dispatch(updateCardOrder(updatedCards)); // Dispatch the update order action
+      dispatch(updateCardOrder(updatedCards)); 
+    }
   };
 
   return (
@@ -28,7 +29,7 @@ const CardStack = () => {
         >
           <Card
             cardData={cardData}
-            isActive={index === 0}
+            active={index === 0} 
           />
         </div>
       ))}

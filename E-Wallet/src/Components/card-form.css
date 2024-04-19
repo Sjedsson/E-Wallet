@@ -1,4 +1,3 @@
-/* General Layout and Typography */
 body, html {
   margin: 0;
   padding: 0;
@@ -50,7 +49,6 @@ body, html {
   justify-content: space-between;
 }
 
-
 .card-preview .card-holder-section,
 .card-preview .card-expiry-section {
   display: flex;
@@ -62,20 +60,17 @@ body, html {
   color: rgba(0, 0, 0, 0.8);
 }
 
-
 .card-preview .card-holder,
 .card-preview .card-expiry {
   font-size: 1em;
   color: #000000;
 }
 
-
 .card-preview.color-bitcoin-inc .card-holder,
 .card-preview.color-bitcoin-inc .card-expiry,
 .card-preview.color-bitcoin-inc .card-info-label {
   color: #000000;
 }
-
 
 .card-form-container {
   width: 90%;
@@ -120,123 +115,113 @@ body, html {
 .card-form-container input[name="expiry"],
 .card-form-container input[name="cvv"] {
   width: 100%;
-  }
-
-  .card-form-container select[name="vendor"] {
-    width: 100%;
-  }
-  
- 
-  .card-preview.color-bitcoin-inc {
-    background-color: #FFAE34;
-  }
-  
-  .card-preview.color-block-chain-inc {
-  background-color: #8B58F9;
-  }
-  
-  .card-preview.color-evil-corp {
-  background-color: #F33355;
-  }
-  
-  .card-preview.color-ninja-bank {
-  background-color: #222222;
-  }
-  
-  .card-preview.color-block-chain-inc .card-holder,
-  .card-preview.color-block-chain-inc .card-expiry,
-  .card-preview.color-block-chain-inc .card-info-label,
-  .card-preview.color-block-chain-inc .card-number,
-  .card-preview.color-evil-corp .card-holder,
-  .card-preview.color-evil-corp .card-expiry,
-  .card-preview.color-evil-corp .card-info-label,
-  .card-preview.color-evil-corp .card-number,
-  .card-preview.color-ninja-bank .card-holder,
-  .card-preview.color-ninja-bank .card-expiry,
-  .card-preview.color-ninja-bank .card-info-label,
-  .card-preview.color-ninja-bank .card-number {
-    color: #ffffff;
-    font-family: 'PT Mono', monospace;
-  }
-  
-  .home-link {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-  .add-card-link {
-    display: block; /* Makes it a block-level element */
-    width: 31.5%; /* Adjusts the width as per padding */
-    margin: 0 auto 30px; /* Centers the button and positions it 30px above the bottom */
-    padding: 20px; /* Adds some padding inside the button */
-    background-color: #fff; /* Sets the background color to white */
-    color: black; /* Sets the text color to black */
-    border: 2px solid #000; /* Adds a solid black border */
-    border-radius: 5px; /* Rounds the corners */
-    text-align: center; /* Centers the text inside the button */
-    font-size: 18px; /* Sets the font size */
-    text-decoration: none; /* Removes the underline from the text */
-    font-weight: bold; /* Makes the font bold */
-    cursor: pointer; /* Changes the cursor to signify it's clickable */
-    box-sizing: border-box; /* Ensures the padding doesn't affect the final width */
-  }
-  
-  /* Adjusting for when the button is at the bottom of the page or its container */
-  .container { /* Assuming the button is inside a container */
-    position: relative; /* Establishes a containing block for absolute positioning */
-    padding-bottom: 60px; /* Adds padding at the bottom for the button */
-  }
-  
-  /* Use this if you need the button to be absolutely positioned within a container */
-  .add-card-link {
-    position: absolute;
-    bottom: 10%; /* Positions the button 30px from the bottom of its relative container */
-    left: 50%;
-    transform: translateX(-50%); /* Centers the button horizontally */
-  }
-  
-
-
-  .add-card-link:hover{
-  background-color: #f0f0f0; /* Light grey background on hover */
 }
 
-/* Top.css - This CSS file should be imported in your Top component */
+.card-form-container select[name="vendor"] {
+  width: 100%;
+}
+
+.card-preview.color-bitcoin-inc {
+  background-color: #FFAE34;
+}
+
+.card-preview.color-block-chain-inc {
+  background-color: #8B58F9;
+}
+
+.card-preview.color-evil-corp {
+  background-color: #F33355;
+}
+
+.card-preview.color-ninja-bank {
+  background-color: #222222;
+}
+
+.card-preview.color-block-chain-inc .card-holder,
+.card-preview.color-block-chain-inc .card-expiry,
+.card-preview.color-block-chain-inc .card-info-label,
+.card-preview.color-block-chain-inc .card-number,
+.card-preview.color-evil-corp .card-holder,
+.card-preview.color-evil-corp .card-expiry,
+.card-preview.color-evil-corp .card-info-label,
+.card-preview.color-evil-corp .card-number,
+.card-preview.color-ninja-bank .card-holder,
+.card-preview.color-ninja-bank .card-expiry,
+.card-preview.color-ninja-bank .card-info-label,
+.card-preview.color-ninja-bank .card-number {
+  color: #ffffff;
+  font-family: 'PT Mono', monospace;
+}
+
+.home-link {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.add-card-link {
+  display: block;
+  width: 31.5%;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: #fff;
+  color: black;
+  border: 2px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.add-card-link {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.add-card-link:hover {
+  background-color: #f0f0f0;
+}
+
 header {
   display: flex;
-  justify-content: center; /* Centers content horizontally */
-  align-items: center; /* Centers content vertically */
-  padding: 20px; /* Adds some padding around the content */
-  background-color: #FFF; /* Sets background color, adjust as needed */
-  border-bottom: 1px solid #EAEAEA; /* Adds a light border to the bottom, adjust color as needed */
-  margin-bottom: 20px; /* Space below the header */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #FFF;
+  border-bottom: 1px solid #EAEAEA;
+  margin-bottom: 20px;
 }
 
 header h1 {
-  font-size: 1.5rem; /* Sets the size of the title, adjust as needed */
-  color: #333; /* Sets the text color, adjust as needed */
-  text-align: center; /* Ensures text is centered even if flex styles fail */
-  margin: 0; /* Resets default margin */
-  font-weight: bold; /* Optional: makes the title bold */
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
 }
 
-/* Add any other styles you want for the header or its contents */
-
-
-  @media (max-width: 768px) {
-    .card-preview {
-      max-width: 85%;
-      height: 25vh;
-    }
-  
-    .home-link {
-      font-size: 2rem;
-      text-align: center;
-    }
-  
-    .card-form-container {
-      width: 95%;
-
-    }
+@media (max-width: 768px) {
+  .card-preview {
+    max-width: 85%;
+    height: 25vh;
   }
+
+  .home-link {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .card-form-container {
+    width: 95%;
+  }
+}
