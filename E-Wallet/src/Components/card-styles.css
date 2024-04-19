@@ -46,12 +46,13 @@
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .card-remove-btn:hover {
   background-color: hsl(0, 82%, 32%);
   transform: rotate(20deg);
+  opacity: 0.3;
 }
 
 .card-remove-btn i {
